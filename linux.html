@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Jellyfin Mods">
+    <meta name="keywords" content="Jellyfin,opensorce,jellyfin opensouce,custom,jellyfin mods">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+         
+          <title>Jellyfin Mods</title>
+          <!-- bootstrap -->
+          <link href="css/bootstrap.min.css" rel="stylesheet">
+          <!-- Custom CSS: custom Styles -->
+          <link href="css/animate.css" rel="stylesheet">
+          <link href="css/viewbox.css" rel="stylesheet">
+          <link href="css/main.css" rel="stylesheet">
+		  <style>
+            h1 {text-align: center;}
+           .im {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.imp {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 500px
+}
+          
+              </style>
+
+          <!-- Google Font and font-awesome -->
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,300,400,400i,500,500i,600,700,900" rel="stylesheet">
+                
+          <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+          <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+          <!--[if lt IE 9]>
+           
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
+  </head>
+  
+<!-- Body Start-->
+<body STYLE="margin:30px">
+<!-- Navbar Start-->
+   <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <!-- Brand -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <!-- Nav links -->
+                <ul class="nav navbar-nav navbar-right">
+                   <li><a href="index.html">home</a></li>
+                   <li class="hidden-xs">|</li>
+                   <li><a href="https://github.com/bobhasnosoul/Jellyfin-mods">Github Repository</a></li>
+                   <li class="hidden-xs">|</li>
+                   <li><a href="https://github.com/bobhasnosoul/">Github @bobhasnosoul</a></li>
+                   <li class="hidden-xs">|</li>
+                   <li><a href="https://github.com/dab2020/">Github @dab2020</a></li>
+                   <li class="hidden-xs">|</li>
+     
+                   <li><a href="contact.html">contribute</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- Navbar Ended-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 id="jellyfin-mods">Jellyfin Mods</h1>
+<p>This is just a guide for various modfications that can be made to Jellyfin</p>
+<h4 id="please-note-this-is-if-you-do-not-want-or-are-unable-to-compile-the-web-client-yourself-there-are-better-ways-of-doing-these-mods-but-if-you-insist-here-is-the-way-to-run-at-it-not-preaching-its-your-server-after-all-d-">Please note this is if you do not want or are unable to compile the web client yourself.. there are better ways of doing these mods but if you insist here is the way to run at it. (not preaching its your server after all :D )</h4>
+<hr>
+<h2 id="force-theme-music-for-all-users-10-7-x-">Force Theme Music for all users (10.7.x)</h2>
+<p>Modify this string in your main.Xxxxxxxxxx.bundle.js to default it to tick (forcing most users default.. unless disabled by them)</p>
+<pre><code>enableThemeSongs:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">return</span> w}
+</code></pre><p>Change it to</p>
+<pre><code>enableThemeSongs:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">return</span> x}
+</code></pre><p>Save and clear cache reload on clients</p>
+<p><strong><em> If you cannot find it (because of regex in search like in nano) try searching for <code>enableThemeSongs:function</code> this should give you the ability to find the string above </em></strong></p>
+<p>Pro tip: use the theme songs plugin to grab many theme songs for tv shows in one go ( <a href="https://github.com/danieladov/jellyfin-plugin-themesongs">https://github.com/danieladov/jellyfin-plugin-themesongs</a> ) or manually add a theme.mp3 at in the root of each tv show folder i.e. <code>/tv/breaking bad/theme.mp3</code> also works for movies but you will have to manuall grab them.</p>
+<hr>
+<h2 id="force-backdrops-for-all-users-10-7-x-">Force backdrops for all users (10.7.x)</h2>
+<p>Modify this string in your main.Xxxxxxxxxx.bundle.js to default it to tick (forcing most users default.. unless disabled by them)</p>
+<pre><code>enableBackdrops:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">return</span> _}
+</code></pre><p>Change it to</p>
+<pre><code>enableBackdrops:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">return</span> x}
+</code></pre><p>Save and clear cache reload on clients</p>
+<p><strong><em> If you cannot find it (because of regex in search like in nano) try searching for <code>enableBackdrops:function</code> this should give you the ability to find the string above </em></strong></p>
+<hr>
+<h2 id="change-splash-logo">Change splash logo</h2>
+<p>besides changing the logo image in the web root files location (/usr/share/jellyfin/web/assets/img/ banner-light.png and icon-transparent.png) which is easy but stops them being animated you can modify index.html to add in your own image or custom gif personally i use a gif that is animated to pulse with my server &quot;BlueBoxOfDOOM&quot; logo</p>
+<p>to do this find this string but add what ever you like in where the icon-transparent.png is i.e. if you have a gif in your web root just replace &quot;assets/img/icon-transparent.png&quot; with mygif.gif (this assumes that your gif is named mygif.gif) </p>
+<pre><code><span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">assets/img/icon-transparent.png</span>);
+</code></pre><p>and then replace the other instance in the splashlogo that is originally this string:</p>
+<pre><code><span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">assets/img/banner-light.png</span>)
+</code></pre><p>you can even direct it outside of your host to any other host by changing the part inside the brackets to a full form url e.g. <a href="https://media.tenor.com/images/f0e22aca6a9498ce63497ca56fb49602/tenor.gif">https://media.tenor.com/images/f0e22aca6a9498ce63497ca56fb49602/tenor.gif</a> for that cool 80s rick roll feeling or you can go more proffesional looking... i dont care, its not my server.. your the one modding and using it.</p>
+<hr>
+<h2 id="change-font-to-whatever-you-want">Change font to whatever you want</h2>
+<p>firstly get a font pack.. there are many out there.. seriously many so take the next few mins to look for the one you like the look of and download the font pack (you can get some from <a href="https://google-webfonts-helper.herokuapp.com/fonts/">https://google-webfonts-helper.herokuapp.com/fonts/</a> or from other sources) and unzip it into a new folder you will be making in the web root called &quot;fonts&quot; (your font pack should contain woff woff2 tff eot and svg files). for this example i used the ubuntu font (dont judge me). You can get the same font from here <a href="https://google-webfonts-helper.herokuapp.com/api/fonts/ubuntu-mono?download=zip&amp;subsets=latin&amp;variants=regular">https://google-webfonts-helper.herokuapp.com/api/fonts/ubuntu-mono?download=zip&amp;subsets=latin&amp;variants=regular</a> this will work out the box with the following example extract the woff etc into the following directory:</p>
+<pre><code><span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/jellyfin/</span>web<span class="hljs-regexp">/fonts/</span>
+</code></pre><p>once you have the files in there simply add the following to your css (rename them for your files in turn unless using the linked pack)</p>
+<pre><code><span class="hljs-comment">/* ubuntu-regular - latin */</span>
+@<span class="hljs-keyword">font-face</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Ubuntu'</span>;
+  <span class="hljs-attribute">font-style</span>: normal;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
+  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">'/web/fonts/ubuntu-v15-latin-regular.eot'</span>); <span class="hljs-comment">/* IE9 Compat Modes */</span>
+  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">''</span>),
+       <span class="hljs-built_in">url</span>(<span class="hljs-string">'/web/fonts/ubuntu-v15-latin-regular.eot?#iefix'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'embedded-opentype'</span>), <span class="hljs-comment">/* IE6-IE8 */</span>
+       <span class="hljs-built_in">url</span>(<span class="hljs-string">'/web/fonts/ubuntu-v15-latin-regular.woff2'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>), <span class="hljs-comment">/* Super Modern Browsers */</span>
+       <span class="hljs-built_in">url</span>(<span class="hljs-string">'/web/fonts/ubuntu-v15-latin-regular.woff'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff'</span>), <span class="hljs-comment">/* Modern Browsers */</span>
+       <span class="hljs-built_in">url</span>(<span class="hljs-string">'/web/fonts/ubuntu-v15-latin-regular.ttf'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'truetype'</span>), <span class="hljs-comment">/* Safari, Android, iOS */</span>
+       <span class="hljs-built_in">url</span>(<span class="hljs-string">'/web/fonts/ubuntu-v15-latin-regular.svg#Ubuntu'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'svg'</span>); <span class="hljs-comment">/* Legacy iOS */</span>
+}
+<span class="hljs-selector-tag">html</span> { <span class="hljs-attribute">font-family</span>: <span class="hljs-string">"Ubuntu"</span> <span class="hljs-meta">!important</span>;}
+</code></pre><p>Easy mode copy paste commands for ubuntu font.. you can use this as a guide to do this for other fonts too if you like</p>
+<pre><code>cd <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/jellyfin/</span>web/
+sudo mkdir fonts
+sudo wget <span class="hljs-string">https:</span><span class="hljs-comment">//google-webfonts-helper.herokuapp.com/api/fonts/ubuntu-mono?download=zip&amp;subsets=latin&amp;variants=regular</span>
+</code></pre><p>that wget might do what looks like an error [1] [2] but just ignore that and press ctrl+c and go to the next command</p>
+<pre><code>sudo mv ubuntu-mono* <span class="hljs-built_in">fonts</span>/ubuntu.zip
+sudo unzip <span class="hljs-built_in">fonts</span>/ubuntu.zip
+</code></pre><p>and your font is now where it should be, just modify the css to suit different names of fonts</p>
+<hr>
+<h2 id="login-background-that-changes-every-10-seconds-and-reload">Login Background that changes every 10 seconds and reload</h2>
+<p>(yes all images can also be changed for whatever you like or even add more or less depending on use case) here are some examples.</p>
+<p><img src="https://user-images.githubusercontent.com/23018412/114848291-75cf1580-9dd6-11eb-982c-02c1829785aa.PNG" alt="1" class="im">
+<img src="https://user-images.githubusercontent.com/23018412/114848300-78ca0600-9dd6-11eb-8120-174a7d22f3ab.PNG" alt="2" class="im">
+<img src="https://user-images.githubusercontent.com/23018412/114848306-79fb3300-9dd6-11eb-8880-ecdba1b47650.PNG" alt="3" class="im"></p>
+<p>this one was just a quick javascript and some files for backgrounds that will let a user be more impressed by certain content you can decide to showcase for that please visit the repo i made <a href="http://git.bbod.tk/BobHasNoSoul/jellyfin-fanartbackground">http://git.bbod.tk/BobHasNoSoul/jellyfin-fanartbackground</a> it explains it in full and has some screen shots and all required files to download. (including some simple copy paste commands to install it)</p>
+<hr>
+<h2 id="adding-logo-to-sidebar">Adding logo to sidebar</h2>
+<p><img src="https://camo.githubusercontent.com/ffd52556715cd72021af339118fe1bb3466b7686c3d75bd473c694d0ff1228a3/68747470733a2f2f692e696d6775722e636f6d2f74386d316f79362e706e67" alt="logosidebar"class="imp"></p>
+<p>This one is failry simmilar to adding a custom side bar link so edit main.xxxxxxxxxx.bundle.js</p>
+<p>find this string:</p>
+<pre><code>&lt;<span class="hljs-keyword">div</span> style=<span class="hljs-string">"height:.5em;"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;',
+</code></pre><p>replace it with the following (replace the img src for a different url or image if you wish by default it will grab the logowhite.png from the web root which will need to be added by the user, any full form url will also work instead of &quot;/web/logowhite.png&quot;):</p>
+<pre><code>&lt;<span class="hljs-selector-tag">div</span> style=<span class="hljs-string">"height:.5em;"</span>&gt;&lt;/div&gt;<span class="hljs-string">',n+='</span>&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"/web/logowhite.png"</span> <span class="hljs-attribute">width</span>=<span class="hljs-number">250px</span> style=<span class="hljs-string">"padding: 5px;display:block; margin-left: auto; margin-right: auto;"</span>&gt;<span class="hljs-string">',</span>
+</code></pre><hr>
+<h2 id="adding-your-logo-at-the-top-of-the-login-page">Adding your logo at the top of the login page</h2>
+<p><img src="https://user-images.githubusercontent.com/23018412/115956212-6b59fd80-a4f3-11eb-915c-324688cf10cb.PNG" alt="Capture" class="im">
+<img src="https://user-images.githubusercontent.com/23018412/115956214-6dbc5780-a4f3-11eb-902c-c1068de13163.PNG" alt="Capture2"class="im"></p>
+<p>simply go to your web root for jellyfin /usr/share/jellyfin/web/ and use nano (or your own text editor) to edit the session-login-index-html.xxxxxxxxxxxxxxxxxxxxx.bundle.js file
+for nano just use </p>
+<pre><code>sudo nano session-login-index-<span class="hljs-selector-tag">html</span>.*<span class="hljs-selector-class">.bundle</span><span class="hljs-selector-class">.js</span>
+</code></pre><p>press ctrl+w and find the string</p>
+<pre><code> &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"padded-left padded-right padded-bottom-page margin-auto-y"</span>&gt;
+</code></pre><p>now directly after this string paste the following (but ammend for your own logo it can even be a gif if you want animated etc)</p>
+<pre><code>&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"/web/logo.png"</span> <span class="hljs-attribute">width</span>=<span class="hljs-number">350px</span> style=<span class="hljs-string">"padding: 0px;display:block; margin-left: auto; margin-right: auto;"</span>&gt;
+</code></pre><hr>
+<h2 id="add-a-link-to-get-more-avatars-on-the-profile-page">add a link to get more avatars on the profile page</h2>
+<p>(this is great to host your own avatars but needs the user to manually download them :/ here is a full guide for a selfhosted pack <a href="https://github.com/BobHasNoSoul/jellyfin-avatars">https://github.com/BobHasNoSoul/jellyfin-avatars</a> but the one bellow is for litterally any other host you want to use)</p>
+<p><img src="https://user-images.githubusercontent.com/23018412/115957171-d65a0300-a4f8-11eb-8a8a-698e4620ea6d.PNG" alt="Capture"class="im"></p>
+<p>i have mine opening a new tab on a host with loads of avatars from many different services, psn, xbl, netflix and a few others</p>
+<p><img src="https://user-images.githubusercontent.com/23018412/115976186-3eddca00-a563-11eb-8597-81341924c750.PNG" alt="Capture"class="im"></p>
+<p>open the file user-profile-index-html.xxxxxxxxxxxxxxxxxxxxx.bundle.js (xs are placeholders) from your jellyfin web root (/usr/share/jellyfin/web) then</p>
+<p>replace the following string</p>
+<pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>$</span><span class="hljs-template-variable">{DeleteImage}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+</code></pre><p>with the following string obviously replace the capitalised link that clearly is just a placeholder all of mine are selfhosted so a link to me would be worthless</p>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>${DeleteImage}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"emby-buttoon"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"raised"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"btnMoreImages"</span>&gt;</span>&gt;<span class="hljs-tag">&lt;<span class="hljs-name">STYLE</span>&gt;</span><span class="css"><span class="hljs-selector-tag">A</span> {<span class="hljs-attribute">text-decoration</span>: none; <span class="hljs-attribute">color</span>: <span class="hljs-number">#def3fb</span>} </span><span class="hljs-tag">&lt;/<span class="hljs-name">STYLE</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>${<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://YOURLINKTOAVATARS.COM"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>More Images<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre><p>save and reload the profile page</p>
+<hr>
+<h2 id="trailers-tab-to-requests-tab">Trailers tab to Requests tab</h2>
+<p><img src="https://user-images.githubusercontent.com/23018412/115976129-c5de7280-a562-11eb-9a07-62338388aa9c.PNG" alt="Capture"></p>
+<p>this replaces the broken trailers tab with a working requests tab, giving clients the ability to login to your ombi from the movie requests tab :D</p>
+<p>okay so first you need to modify two files located inside your jellyfin webroot (/usr/share/jellyfin/web/) obviously change the xs to your unique identication</p>
+<p>the first file</p>
+<pre><code>sudo nano movies-moviesrecommended<span class="hljs-selector-class">.xxxxxxxxxxx</span><span class="hljs-selector-class">.bundle</span><span class="hljs-selector-class">.js</span>
+</code></pre><p>find the string</p>
+<pre><code>{<span class="hljs-attribute">name</span>:h.ZP.<span class="hljs-built_in">translate</span>(<span class="hljs-string">"Trailers"</span>)}
+</code></pre><p>replace it with</p>
+<pre><code>{<span class="hljs-attribute">name</span>:h.ZP.<span class="hljs-built_in">translate</span>(<span class="hljs-string">"Requests"</span>)}
+</code></pre><p>the second file (a little bit more complex)</p>
+<pre><code>sudo nano movies-movies-<span class="hljs-selector-tag">html</span><span class="hljs-selector-class">.xxxxxxxxxxxx</span><span class="hljs-selector-class">.bundle</span><span class="hljs-selector-class">.js</span>
+</code></pre><p>find the string</p>
+<pre><code>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"pageTabContent"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"trailersTab"</span> data-index=<span class="hljs-string">"2"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"flex align-items-center justify-content-center flex-wrap-wrap padded-top padded-left padded-right padded-bottom"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"paging"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt; &lt;button <span class="hljs-keyword">is</span>=<span class="hljs-string">"paper-icon-button-light"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"btnSort autoSize"</span> title=<span class="hljs-string">"${Sort}"</span>&gt;&lt;span <span class="hljs-built_in">class</span>=<span class="hljs-string">"material-icons sort_by_alpha"</span>&gt;&lt;/span&gt;&lt;/button&gt; &lt;button <span class="hljs-keyword">is</span>=<span class="hljs-string">"paper-icon-button-light"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"btnFilter autoSize"</span> title=<span class="hljs-string">"${Filter}"</span>&gt;&lt;span <span class="hljs-built_in">class</span>=<span class="hljs-string">"material-icons filter_list"</span>&gt;&lt;/span&gt;&lt;/button&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"alphaPicker alphaPicker-fixed alphaPicker-fixed-right alphaPicker-vertical"</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-keyword">is</span>=<span class="hljs-string">"emby-itemscontainer"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"itemsContainer vertical-wrap padded-left padded-right"</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"flex align-items-center justify-content-center flex-wrap-wrap padded-top padded-left padded-right padded-bottom"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"paging"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"pageTabContent"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"favoritesTab"</span> data-index=<span class="hljs-string">"3"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"flex align-items-center justify-content-center flex-wrap-wrap padded-top padded-left padded-right padded-bottom"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"paging"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt; &lt;button <span class="hljs-keyword">is</span>=<span class="hljs-string">"paper-icon-button-light"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"btnSelectView autoSize"</span> title=<span class="hljs-string">"${ButtonSelectView}"</span>&gt;&lt;span <span class="hljs-built_in">class</span>=<span class="hljs-string">"material-icons view_comfy"</span>&gt;&lt;/span&gt;&lt;/button&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-keyword">is</span>=<span class="hljs-string">"emby-itemscontainer"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"itemsContainer padded-left padded-right"</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"flex align-items-center justify-content-center flex-wrap-wrap padded-top padded-left padded-right padded-bottom"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"paging"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"pageTabContent"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"collectionsTab"</span> data-index=<span class="hljs-string">"4"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"flex align-items-center justify-content-center flex-wrap-wrap padded-top padded-left padded-right padded-bottom"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"paging"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt; &lt;button <span class="hljs-keyword">is</span>=<span class="hljs-string">"paper-icon-button-light"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"btnSelectView autoSize"</span> title=<span class="hljs-string">"${ButtonSelectView}"</span>&gt;&lt;span <span class="hljs-built_in">class</span>=<span class="hljs-string">"material-icons view_comfy"</span>&gt;&lt;/span&gt;&lt;/button&gt; &lt;button <span class="hljs-keyword">is</span>=<span class="hljs-string">"paper-icon-button-light"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"btnSort autoSize"</span> title=<span class="hljs-string">"${Sort}"</span>&gt;&lt;span <span class="hljs-built_in">class</span>=<span class="hljs-string">"material-icons sort_by_alpha"</span>&gt;&lt;/span&gt;&lt;/button&gt; &lt;button type=<span class="hljs-string">"button"</span> <span class="hljs-keyword">is</span>=<span class="hljs-string">"paper-icon-button-light"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"btnNewCollection autoSize"</span>&gt;&lt;span <span class="hljs-built_in">class</span>=<span class="hljs-string">"material-icons add"</span>&gt;&lt;/span&gt;&lt;/button&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-keyword">is</span>=<span class="hljs-string">"emby-itemscontainer"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"itemsContainer vertical-wrap centered padded-left padded-right"</span> style=<span class="hljs-string">"text-align:center"</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"flex align-items-center justify-content-center flex-wrap-wrap padded-top padded-left padded-right padded-bottom"</span>&gt; &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"paging"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; &lt;/<span class="hljs-keyword">div</span>&gt; 
+</code></pre><p>replace it with this (replace the obvious part inside the string too)    </p>
+<pre><code>&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"pageTabContent"</span> id=<span class="hljs-string">"trailersTab"</span> data-index=<span class="hljs-string">"2"</span>&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://REPLACEME.COM"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"100%"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"850px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span> &lt;<span class="hljs-regexp">/div&gt; </span>
+</code></pre><hr>
+<h2 id="add-custom-link-to-side-bar">Add custom link to side bar</h2>
+<p><img src="https://camo.githubusercontent.com/ffd52556715cd72021af339118fe1bb3466b7686c3d75bd473c694d0ff1228a3/68747470733a2f2f692e696d6775722e636f6d2f74386d316f79362e706e67" alt=""class="im"></p>
+<p>open your jellyfin web root (/usr/share/jellyfin/web) and modify main.XXXXXXXXXXXXXXXX.bundle.js replace the Xs.. with your own unique id</p>
+<p>find the string:</p>
+<pre><code>+m<span class="hljs-selector-class">.ZP</span><span class="hljs-selector-class">.translate</span>(<span class="hljs-string">"Home"</span>)+<span class="hljs-string">"&lt;/span&gt;&lt;/a&gt;"</span>,
+</code></pre><p>replace it with:</p>
+<pre><code>+m.<span class="hljs-type">ZP</span>.translate(<span class="hljs-string">"Home"</span>)+<span class="hljs-string">"&lt;/span&gt;&lt;/a&gt;"</span>, n+='&lt;a is=<span class="hljs-string">"emby-linkbutton"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"navMenuOption lnkMediaFolder"</span> href=<span class="hljs-string">"http://YOUROMBIHERE.COM"</span>&gt;&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"md-icon navMenuOptionIcon"</span>&gt;&lt;img src=<span class="hljs-string">"https://i.ibb.co/zhc7zKV/ombi10.png"</span>&gt;&lt;/i&gt;&lt;span <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"navMenuOptionText"</span>&gt;'+m.<span class="hljs-type">ZP</span>.translate(<span class="hljs-string">"Requests"</span>)+<span class="hljs-string">"&lt;/span&gt;&lt;/a&gt;"</span>,
+</code></pre><p>want more links just keep adding these to the end of the string:</p>
+<pre><code> n+='&lt;a is=<span class="hljs-string">"emby-linkbutton"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"navMenuOption lnkMediaFolder"</span> href=<span class="hljs-string">"http://YOURLINK.COM"</span>&gt;&lt;i <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"md-icon navMenuOptionIcon"</span>&gt;&lt;img src=<span class="hljs-string">"https://ICONIMAGE.COM"</span>&gt;&lt;/i&gt;&lt;span <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"navMenuOptionText"</span>&gt;'+m.<span class="hljs-type">ZP</span>.translate(<span class="hljs-string">"LINKNAME"</span>)+<span class="hljs-string">"&lt;/span&gt;&lt;/a&gt;"</span>,
+</code></pre><hr>
+<h2 id="seasonal-animations">Seasonal Animations</h2>
+<p><em>note the snow animation has been upgraded for a more blizzard effect</em></p>
+<p><img src="https://i.imgur.com/xDWkJkc.gif" alt="screen"></p>
+<p>simply run the following</p>
+<pre><code>cd /usr/share/jellyfin/web
+sudo git clone http:<span class="hljs-comment">//git.bbod.tk/BobHasNoSoul/jellyfin-mods.git</span>
+cd jellyfin-mods
+<span class="hljs-function"><span class="hljs-title">sudo</span></span> mv seasonal ../ 
+<span class="hljs-function"><span class="hljs-title">cd</span></span> ..
+sudo rm -r jellyfin-mods
+</code></pre><p>to manually change to each animation you can run the scripts located:
+    /usr/share/jellyfin/seasonal/add*.sh
+and to remove run the remove script</p>
+<p>insert these into your crontab for automated changing</p>
+<pre><code>## adding seasonal themes
+## add snow (uncomment one of the snow effects bellow and comment the others out, by <span class="hljs-section">default</span> the most snow is enabled)
+#<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">12</span> * /usr/share/jellyfin/web/seasonal/addsnow.sh
+#<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">12</span> * /usr/share/jellyfin/web/seasonal/addsnowflakes.sh
+<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">12</span> * /usr/share/jellyfin/web/seasonal/addmoresnow.sh
+## remove snow
+<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">26</span> <span class="hljs-number">12</span> * /usr/share/jellyfin/web/seasonal/removeseasonal.sh
+## add hearts
+<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">14</span> <span class="hljs-number">2</span> * /usr/share/jellyfin/web/seasonal/addhearts.sh
+## remove hearts
+<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">15</span> <span class="hljs-number">2</span> * /usr/share/jellyfin/web/seasonal/removeseasonal.sh
+## add pattysday
+<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">17</span> <span class="hljs-number">3</span> * /usr/share/jellyfin/web/seasonal/addpattysday.sh
+## remove pattysday
+<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">18</span> <span class="hljs-number">3</span> * /usr/share/jellyfin/web/seasonal/removeseasonal.sh
+## add halloween
+<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">10</span> * /usr/share/jellyfin/web/seasonal/addshalloween.sh
+## remove halloween
+<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">11</span> * /usr/share/jellyfin/web/seasonal/removeseasonal.sh
+## Adding fireworks (DISABLED BY DEFAULT THIS BREAKS XBOX MICROSOFT EDGE)
+#<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">31</span> <span class="hljs-number">12</span> * /usr/share/jellyfin/web/seasonal/addfireworks.sh
+## Remove fireworks (Disabled by <span class="hljs-section">default</span>)
+# <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> * /usr/share/jellyfin/web/seasonal/removeseasonal.sh
+</code></pre><hr>
+<h2 id="hide-scrollbar-in-older-microsoft-edge-xbox-clients-">Hide Scrollbar in older microsoft edge (xbox clients)</h2>
+<pre><code>sudo sed -i -e <span class="hljs-string">'$abody { -ms-overflow-style: none !important; }'</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/jellyfin/</span>web<span class="hljs-regexp">/themes/</span>dark<span class="hljs-regexp">/theme.css</span>
+</code></pre><p>this adds a line to make it hide the scroll bar while retaining function of the scroll.. yay no more invasive scroll bar from the early 00s</p>
+<hr>
+<h2 id="pan-and-tilt-the-backdrops-with-fades-in-and-out">Pan and tilt the backdrops with fades in and out</h2>
+<p>video of this in action:
+<a href="https://gfycat.com/sizzlingcavernousgalapagospenguin">https://gfycat.com/sizzlingcavernousgalapagospenguin</a></p>
+<p>this is custom css and you can use and adjust all or any values you like but personally i like these values</p>
+<pre><code><span class="hljs-comment">/*pan the background for backdrops*/</span>
+@<span class="hljs-keyword">keyframes</span> backgroundScroll {
+0% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">99%</span> <span class="hljs-number">1%</span>; <span class="hljs-attribute">opacity</span>:<span class="hljs-number">0</span>;}
+33% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>;<span class="hljs-attribute">opacity</span>:<span class="hljs-number">1</span>;}
+40% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">99%</span> <span class="hljs-number">99%</span>; <span class="hljs-attribute">opacity</span>:<span class="hljs-number">0</span>;}
+66% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>; }
+75% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">1%</span> <span class="hljs-number">1%</span>; }
+100% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>; }}
+<span class="hljs-selector-class">.backdropImage</span> {<span class="hljs-attribute">background-size</span>: <span class="hljs-number">150%</span> <span class="hljs-number">150%</span>;  <span class="hljs-attribute">opacity</span>:<span class="hljs-number">0</span> ;<span class="hljs-attribute">background-position</span>: <span class="hljs-number">99%</span> <span class="hljs-number">1%</span>; <span class="hljs-attribute">animation</span>: backgroundScroll <span class="hljs-number">60s</span> ease-in-out <span class="hljs-number">1s</span>;}
+
+@<span class="hljs-keyword">keyframes</span> backgroundScrollmob {
+0% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">99%</span> <span class="hljs-number">1%</span>; <span class="hljs-attribute">opacity</span>:<span class="hljs-number">0</span>;}
+33% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>;<span class="hljs-attribute">opacity</span>:<span class="hljs-number">1</span>;}
+40% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">1%</span> <span class="hljs-number">99%</span>; <span class="hljs-attribute">opacity</span>:<span class="hljs-number">0</span>}
+66% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">99%</span> <span class="hljs-number">50%</span>; }
+75% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">99%</span>% <span class="hljs-number">99%</span>; }
+100% { <span class="hljs-attribute">background-position</span>: <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>; }}
+@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">600px</span>) {
+  <span class="hljs-selector-class">.backdropImage</span> {<span class="hljs-attribute">background-size</span>: <span class="hljs-number">150%</span> <span class="hljs-number">150%</span> cover; <span class="hljs-attribute">opacity</span>:<span class="hljs-number">0</span> ; <span class="hljs-attribute">background-position</span>: <span class="hljs-number">99%</span> <span class="hljs-number">1%</span>; <span class="hljs-attribute">animation</span>: backgroundScrollmob <span class="hljs-number">60s</span> ease-in-out <span class="hljs-number">1s</span>;}
+}
+</code></pre><p>simply paste that into your custom css in general settings and hit save (works really well with forced backdrop mod)</p>
+<hr>
+<h2 id="default-every-users-page-size">Default every users page size</h2>
+<p>change this in your main.xxxxxxxxxxxx.bundle.js (so <code>sudo nano main.*.bundle.js</code> )</p>
+<p>from this
+<code>this.get(&quot;libraryPageSize&quot;,!1),10);return 0===t?0:t||100}</code></p>
+<p>to this
+<code>this.get(&quot;libraryPageSize&quot;,!1),10);return 0===t?0:t||300}</code></p>
+<p>you can modifiy the number from 100 to any number you want each users default to be.. note requires users to clear cache in their browser to see the new change.</p>
+<hr>
+<h2 id="change-the-title-of-jellyfin-in-the-browser-tab">Change the Title of Jellyfin in the browser tab</h2>
+<p>This is a fairly simple mod, all you have to do is edit the main.xxxxxxxxxx.bundle.js in the Jellyfin install directory. Open it up and in the massive wall of text find</p>
+<p><code>document.title=&quot;Jellyfin&quot;</code> and <code>document.title=e||&quot;Jellyfin&quot;}</code></p>
+<p>Change the text from Jellyfin to whatever you want, Then open up index.html in the same folder and find <code>&lt;title&gt;Jellyfin&lt;/title&gt;</code> and change that as well.</p>
+<hr>
+<h2 id="fix-the-serviceworker-js-so-it-does-not-throw-errors-and-plays-nice-in-nginx">Fix the serviceworker.js so it does not throw errors and plays nice in nginx</h2>
+<p><img src="https://user-images.githubusercontent.com/23018412/119361783-eefa3c00-bca3-11eb-870c-7908e2b01886.PNG" alt="error"class="im"></p>
+<p>Tested working on 10.7.5</p>
+<p>edit your main.XXXXXXXXXXXXXX.bundle.js and find this string <code>/serviceworker.js</code> and replace it with <code>/web/serviceworker.js</code> then simply download the serviceworker.js from this repo and upload into your jellyfin-web root <code>/usr/share/jellyfin/web/</code> this will give you a working service worker for use with nginx reverse proxy (please see the serviceworker.js.LICENSE file for the license of that file) </p>
+<p>wait, it looks like the same file?
+no its simmilar i removed a few errors mainly the woff2 files being reffered to as auto then the original file name which lead to a non existing file that did not exist, then also bug fixed the issues with the /web/ dir locations.. nothing too fancy but this allows it to actually be ran like it should.</p>
+<p>if all went well you can see a install button next to the address bar on the right, this also will not throw any errors in developer tools in chrome. (may need a cache clear on the client)</p>
+<hr>
+<h3 id="css-modifications">CSS Modifications</h3>
+<hr>
+<h2 id="my-custom-css-jellyflix-with-a-set-of-my-own-modifications-tweaks-added-">my custom css (jellyflix with a set of my own modifications/ tweaks added)</h2>
+<p>simply copy the contents of customcss.css (in this repo <a href="http://git.bbod.tk/BobHasNoSoul/jellyfin-mods/blob/main/customcss.css">http://git.bbod.tk/BobHasNoSoul/jellyfin-mods/blob/main/customcss.css</a> ) to your general custom css tab and paste.. or host it yourself or link to it the following is an example if you download customcss.css to your web root (/usr/share/jellyfin/web/)</p>
+<pre><code>@<span class="hljs-keyword">import</span> url(<span class="hljs-string">"customcss.css"</span>);  
+<span class="hljs-comment">/*fix text being half over to the left on details page*/</span>
+<span class="hljs-selector-class">.detail-clamp-text</span> {<span class="hljs-attribute">width</span>: <span class="hljs-number">98vw</span> <span class="hljs-meta">!important</span>; <span class="hljs-attribute">left</span>: <span class="hljs-number">1%</span> <span class="hljs-meta">!important</span>; <span class="hljs-attribute">right</span> 1% !important;}
+<span class="hljs-selector-class">.detailPagePrimaryContent</span> {<span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">1rem</span> <span class="hljs-meta">!important</span>;}
+<span class="hljs-selector-class">.backgroundContainer</span> { <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#181818</span> <span class="hljs-meta">!important</span>;}
+<span class="hljs-comment">/*fix spacing on the my media*/</span>
+<span class="hljs-selector-class">.card</span> {    <span class="hljs-attribute">margin-left</span>: auto <span class="hljs-meta">!important</span>;    <span class="hljs-attribute">margin-right</span>: auto <span class="hljs-meta">!important</span>; <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">22px</span> <span class="hljs-meta">!important</span>;}
+</code></pre><p>this theme does use the font pack for ubuntu you can find this here <a href="https://google-webfonts-helper.herokuapp.com/api/fonts/ubuntu-mono?download=zip&amp;subsets=latin&amp;variants=regular">https://google-webfonts-helper.herokuapp.com/api/fonts/ubuntu-mono?download=zip&amp;subsets=latin&amp;variants=regular</a> and you can just unzip that font pack into /usr/share/jellyfin/web/fonts so .woff files etc are in that dir (not a nested folder)</p>
+<p>the following hides please login dialog and prevents the login going up to the top by adding a margin.</p>
+<pre><code><span class="hljs-comment">/*Hide "please login" text, margin is to prevent login form moving too far up*/</span>
+<span class="hljs-selector-id">#loginPage</span> <span class="hljs-selector-tag">h1</span> {<span class="hljs-attribute">display</span>: none}
+<span class="hljs-selector-id">#loginPage</span> <span class="hljs-selector-class">.padded-left</span><span class="hljs-selector-class">.padded-right</span><span class="hljs-selector-class">.padded-bottom-page</span> {<span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>}
+</code></pre><p>lighten the backdrop background using the following</p>
+<pre><code><span class="hljs-comment">/*Lighten background*/</span>
+<span class="hljs-selector-class">.backgroundContainer</span><span class="hljs-selector-class">.withBackdrop</span> {<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgba</span>(0, 0, 0, 0.34) <span class="hljs-meta">!important</span>;}
+</code></pre><p>Transparent top bar using the following</p>
+<pre><code><span class="hljs-comment">/*transparent top bar*/</span>
+<span class="hljs-selector-class">.skinHeader-withBackground</span> {<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#20202000</span> <span class="hljs-meta">!important</span>;}
+</code></pre><p>Partially transparent side menu with the following</p>
+<pre><code><span class="hljs-comment">/*Partialy transparent side bar*/</span>
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.mainDrawer</span> {<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgba</span>(0,0,0,0.6) <span class="hljs-meta">!important</span>;}
+</code></pre><p>Remove the title &quot;My Media&quot; with the following</p>
+<pre><code><span class="hljs-comment">/* remove My Media title */</span>
+<span class="hljs-selector-class">.section0</span> <span class="hljs-selector-class">.sectionTitle</span> {<span class="hljs-attribute">display</span>: none;}
+</code></pre><hr>
+<h1 id="some-extra-tools-to-be-used-with-jellyfin">Some Extra tools to be used with Jellyfin</h1>
+<p>these are some extremely helpfull tools that can be used with Jellyfin and increase functionality.</p>
+<h2 id="jfa-go">Jfa-Go</h2>
+<p>This is a Jellyfin account manager and creator that can be used to make links to invite people to Jellyfin and allow them to create their username and passsword. Its written in go and can be installed on most OS&#39;s. You can find it here <a href="https://github.com/hrfee/jfa-go">https://github.com/hrfee/jfa-go</a></p>
+<h2 id="ombi">Ombi</h2>
+<p>Ombi is a media requesting service that can be used with Jellyfin. After adding a custom link in the sidebar , when your friends on family want to request a media, they can request it on Ombi, which will then using integration with Radarr, Sonarr among ohers download it. You can get it here <a href="https://github.com/Ombi-app/Ombi">https://github.com/Ombi-app/Ombi</a></p>
+<h2 id="ersatztv">ErsatzTV</h2>
+<p>ErsatzTV is a bit like PseudoTV for Kodi but more like a Live TV media server. its open source and you can get it here <a href="https://github.com/jasongdove/ErsatzTV">https://github.com/jasongdove/ErsatzTV</a></p>
+<h2 id="intros-plugin">Intros Plugin</h2>
+<p>Intros Plugin allows you to use a video from preroll.video or a custom video to be played before a movie or show. The offical intros repo seems to be down so you can get it from here <a href="https://github.com/dab2020/Jellyfin-intros-repo">https://github.com/dab2020/Jellyfin-intros-repo</a></p>
+
+<!-- Footer section Start -->
+<footer>
+    <!-- container Start-->
+    <div class="container">
+       <div class="row" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">
+           <ul>
+               <li><a href="index.html">Home </a></li>
+         
+           </ul>
+           
+       </div>
+       <div class="footer-logo">
+              <a href="index.html"><img src="images/logo.png" alt="footer-logo"></a>
+       </div>
+    </div>
+    <!-- container Ended-->
+</footer>
+<!-- Footer section Ended --> 
+
+<div class='scrolltop'>
+    <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+</div>
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/animate.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.viewbox.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    </body>
+  <!-- Body Ended -->
+</html>
